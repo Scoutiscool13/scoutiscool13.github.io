@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rachel's gaming site</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f0f0f0; }
+    h1 { color: #333; }
+    .game-container { margin: 20px auto; width: 800px; max-width: 95%; }
+    iframe { width: 100%; height: 500px; border: none; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Rachel's Gaming Site </h1>
+  
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About:Blank Embed</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Website</h1>
+  <p>Click the button to open this site inside an about:blank page.</p>
+
+  <button onclick="openInBlank()">Open in About:Blank</button>
+
+  <script>
+    function openInBlank() {
+      let win = window.open("about:blank", "_blank");
+      win.document.write(document.documentElement.outerHTML);
+      win.document.close();
+    }
+  </script>
+</body>
+</html>
+
+  
+  
+  <div class="game-container">
+    <!-- Embedded Game -->
+    <iframe src="https://hianime.to/" allowfullscreen></iframe>
+  </div>
+
+  <div class="game-container">
+    <!-- Another Game -->
+    <iframe src="https://petezahgames.com/" allowfullscreen></iframe>
+  </div>
+  
+</body>
+</html>
