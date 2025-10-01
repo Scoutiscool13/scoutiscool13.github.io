@@ -36,13 +36,30 @@
       border-radius: 8px;
     }
 
-    select {
+    input[type=text] {
+      width: 60%;
       padding: 10px;
       border-radius: 8px;
       border: none;
       font-size: 16px;
-      margin: 15px 0;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #00ffcc, #0099ff);
+      color: #111;
       cursor: pointer;
+      margin-left: 10px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #0099ff, #00ffcc);
+      transform: scale(1.05);
     }
 
     footer {
@@ -76,16 +93,24 @@
     <iframe id="youtubeFrame" src="https://piped.video" allowfullscreen></iframe>
   </div>
 
+  <div class="game-container">
+    <h2>Visitor URL</h2>
+    <p>Enter a website URL to try to open it inside this iframe:</p>
+    <input type="text" id="userURL" placeholder="https://example.com">
+    <button onclick="openUserURL()">Load</button>
+    <iframe id="userFrame" src=""></iframe>
+  </div>
+
   <footer>
     <p>© 2025 Rachel's Gaming Site | Designed with 💖 and 🎮</p>
   </footer>
 
   <script>
     function switchWrapper() {
-      let frame = document.getElementById("youtubeFrame");
-      let select = document.getElementById("wrapperSelect");
+      const frame = document.getElementById("youtubeFrame");
+      const select = document.getElementById("wrapperSelect");
       frame.src = select.value;
     }
-  </script>
-</body>
-</html>
+
+    function openUserURL() {
+      const url = document.getElementById(
