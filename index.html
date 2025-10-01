@@ -77,21 +77,7 @@
     <iframe src="https://hianime.to/" allowfullscreen></iframe>
   </div>
 
-  <div class="game-container">
-    <h2>Another Game</h2>
-    <iframe src="https://petezahgames.com/" allowfullscreen></iframe>
-  </div>
 
-  <div class="game-container">
-    <h2>YouTube Wrapper</h2>
-    <p>Select a wrapper to browse YouTube:</p>
-    <select id="wrapperSelect" onchange="switchWrapper()">
-      <option value="https://piped.video">Piped</option>
-      <option value="https://yewtu.be">Invidious</option>
-      <option value="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ">YouTube Embed (Demo)</option>
-    </select>
-    <iframe id="youtubeFrame" src="https://piped.video" allowfullscreen></iframe>
-  </div>
 
   <div class="game-container">
     <h2>Visitor URL</h2>
@@ -105,12 +91,8 @@
     <p>© 2025 Rachel's Gaming Site | Designed with 💖 and 🎮</p>
   </footer>
 
-  <script>
-    function switchWrapper() {
-      const frame = document.getElementById("youtubeFrame");
-      const select = document.getElementById("wrapperSelect");
-      frame.src = select.value;
-    }
+
 
     function openUserURL() {
       const url = document.getElementById(
+
