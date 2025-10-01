@@ -104,9 +104,26 @@
     <iframe src="https://petezahgames.com/" allowfullscreen></iframe>
   </div>
 
+<button onclick="openYouTube()">Open YouTube in About:Blank</button>
+
+<script>
+  function openYouTube() {
+    let win = window.open("about:blank", "_blank");
+    let iframe = win.document.createElement("iframe");
+    iframe.src = "https://www.youtube.com";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    win.document.body.style.margin = "0";
+    win.document.body.appendChild(iframe);
+  }
+</script>
+
+  
   <footer>
     <p>© 2025 Rachel's Gaming Site | Designed with 💖 and 🎮</p>
   </footer>
 </body>
 </html>
+
 
