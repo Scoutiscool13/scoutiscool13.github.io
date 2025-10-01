@@ -19,30 +19,6 @@
       margin-bottom: 20px;
     }
 
-    p {
-      margin: 10px 0 20px;
-      color: #cccccc;
-    }
-
-    button {
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #00ffcc, #0099ff);
-      color: #111;
-      cursor: pointer;
-      margin: 20px 0;
-      transition: 0.3s ease;
-      box-shadow: 0 0 10px #00ffcc;
-    }
-
-    button:hover {
-      background: linear-gradient(135deg, #0099ff, #00ffcc);
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00ffcc, 0 0 25px #0099ff;
-    }
-
     .game-container { 
       margin: 30px auto; 
       width: 900px; 
@@ -51,12 +27,6 @@
       border-radius: 12px;
       padding: 15px;
       box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
-      transition: transform 0.2s ease;
-    }
-
-    .game-container:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.6);
     }
 
     iframe { 
@@ -64,6 +34,15 @@
       height: 500px; 
       border: none; 
       border-radius: 8px;
+    }
+
+    select {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      margin: 15px 0;
+      cursor: pointer;
     }
 
     footer {
@@ -76,30 +55,37 @@
 <body>
   <h1>🎮 Welcome to Rachel's Gaming Site 🎮</h1>
 
-  <p>Click the button to open this site inside an about:blank page.</p>
-  <button onclick="openInBlank()">Open in About:Blank</button>
-
-  <script>
-    function openInBlank() {
-      let win = window.open("about:blank", "_blank");
-      win.document.write(document.documentElement.outerHTML);
-      win.document.close();
-    }
-  </script>
-
   <div class="game-container">
     <h2>Featured Game</h2>
     <iframe src="https://hianime.to/" allowfullscreen></iframe>
   </div>
 
+  <div class="game-container">
+    <h2>Another Game</h2>
+    <iframe src="https://petezahgames.com/" allowfullscreen></iframe>
+  </div>
 
   <div class="game-container">
     <h2>YouTube Wrapper</h2>
-    <iframe src="https://piped.video" allowfullscreen></iframe>
+    <p>Select a wrapper to browse YouTube:</p>
+    <select id="wrapperSelect" onchange="switchWrapper()">
+      <option value="https://piped.video">Piped</option>
+      <option value="https://yewtu.be">Invidious</option>
+      <option value="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ">YouTube Embed (Demo)</option>
+    </select>
+    <iframe id="youtubeFrame" src="https://piped.video" allowfullscreen></iframe>
   </div>
 
   <footer>
     <p>© 2025 Rachel's Gaming Site | Designed with 💖 and 🎮</p>
   </footer>
+
+  <script>
+    function switchWrapper() {
+      let frame = document.getElementById("youtubeFrame");
+      let select = document.getElementById("wrapperSelect");
+      frame.src = select.value;
+    }
+  </script>
 </body>
 </html>
