@@ -50,25 +50,25 @@
       border-radius: 12px;
     }
 
-    .open-btn {
-      display: inline-block;
+    .btn-blank {
       margin-top: 15px;
-      padding: 12px 25px;
-      font-size: 16px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       background: linear-gradient(135deg, #00ffe0, #0099ff);
       color: #111;
       cursor: pointer;
-      transition: 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 0 10px #00ffe0;
-      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ffe0, 0 0 20px #0099ff;
+      text-transform: uppercase;
     }
 
-    .open-btn:hover {
+    .btn-blank:hover {
       background: linear-gradient(135deg, #0099ff, #00ffe0);
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00ffe0, 0 0 25px #0099ff;
+      transform: scale(1.1) rotate(-1deg);
+      box-shadow: 0 0 20px #00ffe0, 0 0 35px #0099ff;
     }
 
     footer {
@@ -85,17 +85,24 @@
   <div class="game-container">
     <h2>Featured Game</h2>
     <iframe src="https://hianime.to/" allowfullscreen></iframe>
-    <a href="https://hianime.to/" target="_blank" class="open-btn">Open Full Screen</a>
   </div>
 
   <div class="game-container">
-    <h2>YouTube</h2>
-    <iframe src="https://yewtu.be" allowfullscreen></iframe>
-    <a href="https://yewtu.be" target="_blank" class="open-btn">Open Full Screen</a>
+    <h2>Open in About:Blank</h2>
+    <p>Click the button to open this site in a blank page.</p>
+    <button class="btn-blank" onclick="openInBlank()">Open in About:Blank</button>
   </div>
 
   <footer>
     <p>© 2025 Rachel's Gaming Site | Designed with 💖 and 🎮</p>
   </footer>
+
+  <script>
+    function openInBlank() {
+      const win = window.open("about:blank", "_blank");
+      win.document.write(document.documentElement.outerHTML);
+      win.document.close();
+    }
+  </script>
 </body>
 </html>
